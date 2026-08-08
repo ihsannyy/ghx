@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"regexp"
 	"strings"
 )
 
@@ -20,6 +21,8 @@ type GHEmailAPI struct {
 	Primary  bool   `json:"primary"`
 	Verified bool   `json:"verified"`
 }
+
+var sshUserRegex = regexp.MustCompile(`Hi ([a-zA-Z0-9-]+)!`)
 
 func IsGHInstalled() bool {
 	_, err := exec.LookPath("gh")
@@ -56,6 +59,36 @@ func GetActiveGHToken(host string) (string, error) {
 		return "", err
 	}
 	return strings.TrimSpace(stdout.String()), nil
+}
+
+func GetActiveGHUsername(host string) (string, error) {
+	if host == "" {
+		host = "github.com"
+	}
+	token, err := GetActiveGHToken(host)
+	if err != nil || token == "" {
+		return "", fmt.Errorf("no active gh token found")
+	}
+	u, _, _, err := FetchUserInfo(token, host)
+	return u, err
+}
+
+func TestSSHConnection(host string) (string, error) {
+	if host == "" {
+		host = "github.com"
+	}
+	target := "git@" + host
+	cmd := exec.Command("ssh", "-T", "-o", "StrictHostKeyChecking=accept-new", "-o", "ConnectTimeout=5", target)
+	var stderr bytes.Buffer
+	cmd.Stderr = &stderr
+	_ = cmd.Run()
+
+	out := stderr.String()
+	matches := sshUserRegex.FindStringSubmatch(out)
+	if len(matches) > 1 {
+		return matches[1], nil
+	}
+	return "", fmt.Errorf("ssh authentication not active or failed")
 }
 
 func FetchUserInfo(token string, host string) (username string, name string, email string, err error) {

@@ -47,6 +47,27 @@ type Messages struct {
 	LangUpdated     string
 	LangUnsupported string
 
+	DoctorShort         string
+	DoctorLong          string
+	DoctorHeader        string
+	DoctorGHInstalled   string
+	DoctorGHNotFound    string
+	DoctorGitInstalled  string
+	DoctorGitNotFound   string
+	DoctorConfigValid   string
+	DoctorConfigError   string
+	DoctorActiveAccount string
+	DoctorNoActive      string
+	DoctorGHMatch       string
+	DoctorGHMismatch    string
+	DoctorGitMatch      string
+	DoctorGitMismatch   string
+	DoctorSSHMatch      string
+	DoctorSSHMismatch   string
+	DoctorSSHNotConfig  string
+	DoctorPassed        string
+	DoctorIssues        string
+
 	ErrGHNotInstalled  string
 	ErrGitNotInstalled string
 	ErrConfigLoad      string

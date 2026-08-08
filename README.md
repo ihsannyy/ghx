@@ -115,6 +115,7 @@ ghx current
 | `ghx current` | None | Display details (username, display name, email) of current active account |
 | `ghx email` | `[email]` | Display or update the email address for current active account & git config |
 | `ghx remove` | `<account>` | Remove a saved account from `ghx` configuration |
+| `ghx doctor` | None | Run diagnostic checks for `gh` auth, `git` identity, and SSH key consistency |
 | `ghx lang` | `[en\|id]` | View or set application interface language (`en` for English, `id` for Indonesian) |
 | `ghx completion` | `<shell>` | Generate shell completion script (`bash`, `zsh`, `fish`, `powershell`) |
 

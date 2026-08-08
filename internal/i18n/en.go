@@ -1,7 +1,7 @@
 package i18n
 
 var EnMessages = Messages{
-	RootShort: "",
+	RootShort: "ghx - Multi-account CLI manager for GitHub CLI (gh)",
 	RootLong:  "",
 
 	LoginShort:      "Add or authenticate a GitHub account",
@@ -47,6 +47,27 @@ var EnMessages = Messages{
 	LangCurrent:     "Current language: %s",
 	LangUpdated:     "Language changed to %s.",
 	LangUnsupported: "Unsupported language '%s'. Supported options: en, id",
+
+	DoctorShort:         "Check system and configuration consistency",
+	DoctorLong:          "Check for mismatches between ghx active account, gh CLI auth status, git config identity, and SSH key.",
+	DoctorHeader:        "Running ghx diagnostic checks...",
+	DoctorGHInstalled:   "GitHub CLI (gh) is installed",
+	DoctorGHNotFound:    "GitHub CLI (gh) is NOT installed",
+	DoctorGitInstalled:  "Git is installed",
+	DoctorGitNotFound:   "Git is NOT installed",
+	DoctorConfigValid:   "Configuration file is valid",
+	DoctorConfigError:   "Configuration file error or missing",
+	DoctorActiveAccount: "Active ghx account: %s",
+	DoctorNoActive:      "No account currently active in ghx",
+	DoctorGHMatch:       "gh CLI auth matches active account (%s)",
+	DoctorGHMismatch:    "Mismatch: gh CLI is authenticated as '%s', but active ghx account is '%s'. Fix: ghx switch %s",
+	DoctorGitMatch:      "Git global identity matches active account (%s <%s>)",
+	DoctorGitMismatch:   "Mismatch: git config is set to '%s <%s>', expected '%s <%s>'. Fix: ghx switch %s",
+	DoctorSSHMatch:      "SSH key matches active account (%s)",
+	DoctorSSHMismatch:   "Mismatch: SSH key is authenticated as '%s', but active ghx account is '%s'",
+	DoctorSSHNotConfig:  "SSH authentication: Not connected or using HTTPS protocol",
+	DoctorPassed:        "All checks passed! ghx, gh CLI, and git identity are fully synchronized.",
+	DoctorIssues:        "Found %d issue(s). Run 'ghx switch <account>' or 'ghx login' to resolve.",
 
 	ErrGHNotInstalled:  "GitHub CLI (gh) is not installed or not in PATH.",
 	ErrGitNotInstalled: "Git is not installed or not in PATH.",

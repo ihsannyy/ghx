@@ -1,7 +1,7 @@
 package i18n
 
 var IdMessages = Messages{
-	RootShort: "",
+	RootShort: "ghx - CLI pengelola multi-akun untuk GitHub CLI (gh)",
 	RootLong:  "",
 
 	LoginShort:      "Tambah atau autentikasi akun GitHub",
@@ -47,6 +47,27 @@ var IdMessages = Messages{
 	LangCurrent:     "Bahasa saat ini: %s",
 	LangUpdated:     "Bahasa berhasil diubah ke %s.",
 	LangUnsupported: "Bahasa '%s' tidak didukung. Opsi yang tersedia: en, id",
+
+	DoctorShort:         "Cek konsistensi sistem dan konfigurasi",
+	DoctorLong:          "Periksa perbedaan antara akun aktif ghx, status auth gh CLI, identitas git config, dan kunci SSH.",
+	DoctorHeader:        "Menjalankan pemeriksaan diagnostik ghx...",
+	DoctorGHInstalled:   "GitHub CLI (gh) sudah terinstall",
+	DoctorGHNotFound:    "GitHub CLI (gh) BELUM terinstall",
+	DoctorGitInstalled:  "Git sudah terinstall",
+	DoctorGitNotFound:   "Git BELUM terinstall",
+	DoctorConfigValid:   "File konfigurasi valid",
+	DoctorConfigError:   "File konfigurasi error atau tidak ditemukan",
+	DoctorActiveAccount: "Akun aktif ghx: %s",
+	DoctorNoActive:      "Belum ada akun aktif di ghx",
+	DoctorGHMatch:       "Auth gh CLI sesuai dengan akun aktif (%s)",
+	DoctorGHMismatch:    "Perbedaan: gh CLI terautentikasi sebagai '%s', tetapi akun aktif ghx adalah '%s'. Perbaikan: ghx switch %s",
+	DoctorGitMatch:      "Identitas global Git sesuai dengan akun aktif (%s <%s>)",
+	DoctorGitMismatch:   "Perbedaan: git config saat ini '%s <%s>', seharusnya '%s <%s>'. Perbaikan: ghx switch %s",
+	DoctorSSHMatch:      "Kunci SSH sesuai dengan akun aktif (%s)",
+	DoctorSSHMismatch:   "Perbedaan: Kunci SSH terautentikasi sebagai '%s', tetapi akun aktif ghx adalah '%s'",
+	DoctorSSHNotConfig:  "Autentikasi SSH: Tidak terhubung atau menggunakan protokol HTTPS",
+	DoctorPassed:        "Semua pemeriksaan lulus! ghx, gh CLI, dan identitas git telah tersinkronisasi.",
+	DoctorIssues:        "Ditemukan %d masalah. Jalankan 'ghx switch <akun>' atau 'ghx login' untuk memperbaiki.",
 
 	ErrGHNotInstalled:  "GitHub CLI (gh) tidak terinstall atau tidak ada di PATH.",
 	ErrGitNotInstalled: "Git tidak terinstall atau tidak ada di PATH.",

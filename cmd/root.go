@@ -59,6 +59,9 @@ func updateCommandTexts() {
 		case "lang":
 			c.Short = m.LangShort
 			c.Long = m.LangLong
+		case "doctor":
+			c.Short = m.DoctorShort
+			c.Long = m.DoctorLong
 		}
 	}
 }
@@ -72,4 +75,5 @@ func init() {
 	rootCmd.AddCommand(emailCmd)
 	rootCmd.AddCommand(currentCmd)
 	rootCmd.AddCommand(langCmd)
+	rootCmd.AddCommand(doctorCmd)
 }

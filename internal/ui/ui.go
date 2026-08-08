@@ -14,7 +14,7 @@ import (
 var (
 	Red    = color.New(color.FgRed, color.Bold).SprintFunc()
 	Green  = color.New(color.FgGreen, color.Bold).SprintFunc()
-	Yellow = color.New(color.FgYellow).SprintFunc()
+	Yellow = color.New(color.FgYellow, color.Bold).SprintFunc()
 	Bold   = color.New(color.Bold).SprintFunc()
 	Cyan   = color.New(color.FgCyan, color.Bold).SprintFunc()
 	Gray   = color.New(color.FgHiBlack).SprintFunc()
@@ -26,6 +26,26 @@ func PrintError(msg string) {
 
 func PrintSuccess(msg string) {
 	fmt.Printf("%s %s\n", Green("✔"), msg)
+}
+
+func PrintWarn(msg string) {
+	fmt.Printf("%s %s\n", Yellow("⚠️"), msg)
+}
+
+func PrintItemPass(msg string) {
+	fmt.Printf("  %s %s\n", Green("✔"), msg)
+}
+
+func PrintItemFail(msg string) {
+	fmt.Printf("  %s %s\n", Red("❌"), msg)
+}
+
+func PrintItemWarn(msg string) {
+	fmt.Printf("  %s %s\n", Yellow("⚠️"), msg)
+}
+
+func PrintItemInfo(msg string) {
+	fmt.Printf("  %s %s\n", Cyan("ℹ"), msg)
 }
 
 func PrintInfo(msg string) {
