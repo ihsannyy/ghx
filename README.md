@@ -44,7 +44,7 @@ pkg update && pkg install golang gh git make
 Clone the repository and install using the included `Makefile`:
 
 ```bash
-git clone https://github.com/your-username/ghx.git
+git clone https://github.com/ihsannyy/ghx.git
 cd ghx
 make build
 make install
